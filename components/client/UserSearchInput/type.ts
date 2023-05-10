@@ -1,3 +1,5 @@
+import IUser from "@/lib/interfaces/IUser";
+
 export interface IUserSearchInput {
-  onSearch?: () => object[];
+  onChange: (keyword: string) => void;
 }
