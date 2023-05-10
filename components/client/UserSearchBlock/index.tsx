@@ -15,7 +15,7 @@ export default function UserSearchBlock() {
   const [loading, setLoading] = useState<boolean>(true);
 
   async function handleSearchUser(keyword: string) {
-    if (!keyword || keyword.length < 4) {
+    if (!keyword || keyword.length < 2) {
       return setUsers([]);
     }
 
@@ -38,7 +38,7 @@ export default function UserSearchBlock() {
   }, [keyword]);
 
   return (
-    <div className="bg-white px-10 py-10 rounded-md w-2/4">
+    <div className="bg-white px-5 py-5 md:px-10 md:py-10 rounded-md w-full lg:w-2/4">
       <div className="mb-10">
         <label className="block text-sm font-medium leading-6 text-gray-900">Search Github User</label>
         <div className="mt-2">

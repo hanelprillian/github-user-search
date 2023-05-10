@@ -23,3 +23,35 @@ query UserSearchQuery($keyword: String!) {
   }
 }
 `;
+
+export const USER_DETAIL_QUERY = `
+query UserDetailQuery($username: String!) {
+  user(login: $username) {
+    name
+    login
+    name
+    avatarUrl
+    location
+    websiteUrl
+    following {
+      totalCount
+    }
+    followers {
+      totalCount
+    }
+    websiteUrl
+    url
+    repositories(last: 20) {
+      edges {
+        node {
+          id
+          name
+          url
+          description
+          descriptionHTML
+        }
+      }
+    }
+  }
+}
+`;
